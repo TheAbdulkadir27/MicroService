@@ -8,8 +8,9 @@ namespace FreeCourse.Services.Catalog.Mapping
     {
         public GenerallMapping()
         {
-            CreateMap<Category, Category>().ReverseMap();
+            CreateMap<Category, CategoryDto>().ReverseMap();
             CreateMap<CourseCreateDto, CourseDto>().ReverseMap();
+            CreateMap<CourseCreateDto, Course>().ReverseMap();
             CreateMap<CourseDto, Course>().ReverseMap();
             CreateMap<CourseUpdateDto, Course>().ReverseMap();
             CreateMap<FeatureDto, Feature>().ReverseMap();

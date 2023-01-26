@@ -17,7 +17,7 @@ namespace FreeCourse.Shared
         public List<string> Mistakes { get; private set; }
         public static Response<T> Success(T data, int statusCode)
         {
-            return new Response<T> { Data = default(T), IsSuccessfull = true, StatusCode = statusCode };
+            return new Response<T> { Data = data, IsSuccessfull = true, StatusCode = statusCode };
         }
         public static Response<T> Success(int statuscode)
         {

@@ -26,9 +26,10 @@ namespace FreeCourse.Services.Catalog.Services
             var Category = await CategoryCollection.Find(category => true).ToListAsync();
             return Response<List<CategoryDto>>.Success(mapper.Map<List<CategoryDto>>(Category), 200);
         }
-        public async Task<Response<CategoryDto>> CreateCategory(Category category)
+        public async Task<Response<CategoryDto>> CreateCategory(CategoryDto category)
         {
-            await CategoryCollection.InsertOneAsync(category);
+            var category1 = mapper.Map<Category>(category);
+            await CategoryCollection.InsertOneAsync(category1);
             return Response<CategoryDto>.Success(mapper.Map<CategoryDto>(category), 200);
         }
         public async Task<Response<CategoryDto>> GetByIdAsync(string id)
